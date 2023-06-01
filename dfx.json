@@ -1,0 +1,29 @@
+{
+  "canisters": {
+    "artflow_backend": {
+      "main": "src/artflow_backend/main.mo",
+      "type": "motoko"
+    },
+    "artflow_frontend": {
+      "dependencies": [
+        "artflow_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/artflow_frontend/src/index.html"
+      },
+      "source": [
+        "src/artflow_frontend/assets",
+        "dist/artflow_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
