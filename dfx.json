@@ -4,6 +4,10 @@
       "main": "src/artflow_backend/main.mo",
       "type": "motoko"
     },
+    "nft":{
+      "main":"src/NFT/nft.mo",
+      "type":"motoko"
+    },
     "artflow_frontend": {
       "dependencies": [
         "artflow_backend"
