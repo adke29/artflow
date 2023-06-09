@@ -37,6 +37,11 @@ module.exports = {
   output: {
     filename: "index.js",
     path: path.join(__dirname, "dist", frontendDirectory),
+    publicPath: '/',
+  },
+
+  devServer: {
+    historyApiFallback: true,
   },
 
   // Depending in the language or framework you are using for

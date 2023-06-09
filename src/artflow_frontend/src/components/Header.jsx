@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Gallery from "./Gallery";
 
 function Header() {
+  const refresh = () => window.location.reload(true)
   return (
 
     <div className="app-root-1">
@@ -17,7 +18,7 @@ function Header() {
 
           <div className="header-empty-6"></div>
           <div className="header-space-8"></div>
-          <button className="ButtonBase-root Button-root Button-text header-navButtons-3">
+          <button className="ButtonBase-root Button-root Button-text header-navButtons-3" onClick={refresh}>
             <Link to="/discover">
               Discover
             </Link>
@@ -27,7 +28,7 @@ function Header() {
               Minter
             </Link>
           </button>
-          <button className="ButtonBase-root Button-root Button-text header-navButtons-3">
+          <button className="ButtonBase-root Button-root Button-text header-navButtons-3" onClick={refresh}>
             <Link to="/collection">
               My NFTs
             </Link>

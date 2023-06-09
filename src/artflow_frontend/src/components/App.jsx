@@ -8,17 +8,23 @@ import Minter from "./Minter";
 import { Routes, Route } from "react-router-dom";
 import { artflow_backend } from "../../../declarations/artflow_backend";
 import CURRENT_USER_ID from "../index";
+import NoMatch from "./NoMatch";
 
 function App() {
   // const NFTID = "aovwi-4maaa-aaaaa-qaagq-cai";
 
   const [userOwnedGallery, setOwnedGallery] = useState();
+  const [listingGallery, setListingGallery] = useState();
+
   async function getNFTs(){
     const userNFTIds = await artflow_backend.getOwnedNFTs(CURRENT_USER_ID);
-    console.log(userNFTIds);
-    setOwnedGallery(<Gallery ids = {userNFTIds}/>);
+    //  
+    setOwnedGallery(<Gallery title = "My NFT" ids = {userNFTIds} role="collection"/>);
+
+    const listedNFTIds = await artflow_backend.getListedNFTs();
+    setListingGallery(<Gallery title = "Discover" ids={listedNFTIds} role="discover"/>)
   }
-  useEffect(()=>{
+    useEffect(()=>{
     getNFTs();
   },[])
   return (
@@ -26,9 +32,10 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<img className="bottom-space" src="home-img.png" />} />
-        <Route path="/discover" element={<h1>Discover</h1>} />
+        <Route path="/discover" element={listingGallery} />
         <Route path="/minter" element={<Minter />} />
         <Route path="/collection" element={userOwnedGallery} />
+        <Route path= "*" element={<NoMatch/>}/>
       </Routes>
       <Footer />
     </div>

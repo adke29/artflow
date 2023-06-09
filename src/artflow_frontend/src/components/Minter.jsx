@@ -21,7 +21,6 @@ function Minter() {
     const newNFTID = await artflow_backend.mint(imageByteData, name);
     console.log(newNFTID.toText());
     setNFTPrincipal(newNFTID);
-
     setLoaderHidden(true);
   }
 
@@ -76,7 +75,7 @@ function Minter() {
         Minted!
       </h3>
       <div className="horizontal-center">
-        <Item id={nftPrincipal.toText()}/>
+        <Item id={nftPrincipal}/>
       </div>
     </div>);
   }
