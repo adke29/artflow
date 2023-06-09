@@ -107,7 +107,7 @@ dfx canister call artflow_backend mint '(vec {137; 80; 78; 71; 13; 10; 26; 10; 0
 2. List the item into mapOfListings:
 
 ```
-dfx canister call artflow_backend listItem '(principal "gq3rs-huaaa-aaaaa-qaasa-cai", 2)'
+dfx canister call artflow_backend listItem '(principal "h5vv4-i4aaa-aaaaa-qaavq-cai", 2)'
 ```
 
 3. Get OpenD canister ID:
@@ -116,10 +116,11 @@ dfx canister call artflow_backend listItem '(principal "gq3rs-huaaa-aaaaa-qaasa-
 dfx canister id artflow_backend
 ```
 
-4. Transfer NFT to OpenD:
+4. Transfer NFT to Artflow:
 
 ```
-dfx canister call gq3rs-huaaa-aaaaa-qaasa-cai transferOwnership '(principal "a3shf-5eaaa-aaaaa-qaafa-cai", true)'
+dfx canister call <NFT ID> transferOwnership '(principal <CANISTERID>, true)'
+dfx canister call h5vv4-i4aaa-aaaaa-qaavq-cai transferOwnership '(principal "a3shf-5eaaa-aaaaa-qaafa-cai", true)'
 ```
 
 # Conneting to the Token Canister
